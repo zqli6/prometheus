@@ -24,7 +24,7 @@
 ### 场景 A：使用 K8s 内部 MariaDB (推荐用于实验/全栈环境)
 直接运行本项目提供的 StatefulSet 脚本：
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/storage_for_grafana/grafana-mysql.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/storage_for_grafana/grafana-mysql.yaml
 ```
 * **数据库地址**：`mysql-grafana.monitoring:3306`
 * **存储类要求**：需存在 `sc-nfs`。
@@ -61,7 +61,7 @@ kubectl create secret generic grafana-db-secret \
 ### 方式 2：应用 YAML 文件
 如果你偏好 GitOps，修改 `grafana-db-secret.yaml` 中的 Base64 编码后执行：
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/storage_for_grafana/grafana-db-secret.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/storage_for_grafana/grafana-db-secret.yaml
 ```
 
 ---
@@ -70,7 +70,7 @@ kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/st
 
 1. 创建 Endpoint 和 Service
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/storage_for_grafana/grafana-mysql-externalname-svc.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/storage_for_grafana/grafana-mysql-externalname-svc.yaml
 ```
 具体内容如下：需修改具体IP地址
 ```
@@ -109,7 +109,7 @@ endpoints:
 ```
 2. 创建 Secret 时引用 Service 名，需修改your_password  
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/storage_for_grafana/grafana-db-secret-externalname.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/storage_for_grafana/grafana-db-secret-externalname.yaml
 ```
 ```Bash
 kubectl create secret generic grafana-db-secret \
@@ -128,12 +128,12 @@ kubectl create secret generic grafana-db-secret \
 ```bash
 # 1. 注入带有 [database] 指令的配置文件  
 #    替换kube-prometheus的operator中的`manifests/grafana-config.yaml`
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/storage_for_grafana/grafana-config-grafana-db.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/storage_for_grafana/grafana-config-grafana-db.yaml
 
 
 # 2. 部署经过 subPath 手术修改的 Deployment  
 #    替换kube-prometheus的operator中的`manifests/grafana-deployment.yaml`
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/storage_for_grafana/grafana-deployment-db.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/storage_for_grafana/grafana-deployment-db.yaml
 ```
 
 ---

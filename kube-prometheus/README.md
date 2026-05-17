@@ -9,7 +9,7 @@
 1.下载  
   1.swr镜像加速0.17.0  
 ```
-wget https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-prometheus/kube-prometheus-0.17.0-lzq.tar.gz
+wget https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus-0.17.0-lzq.tar.gz
 ```
   2.官方下载  
 ```
@@ -29,7 +29,7 @@ kubectl apply -f manifests/
 **需先安装[ingress controller](https://gitee.com/zqli6/k8s/tree/main/ingress)管理ingress**  
 **安装[metalLB](https://gitee.com/zqli6/k8s/tree/main/metalLB)分配地址池**  
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-prometheus/kube-prometheus-ingress.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus-ingress.yaml
 ```
 ```
 [root@master1 ~ ]# kubectl describe ingress -n monitoring 
@@ -55,10 +55,10 @@ kubectl exec -it grafana-64944b7f44-pkk76 -n monitoring -- grafana-cli admin res
 
 4. 测试文件的创建
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-prometheus/probe-example.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/probe-example.yaml
 ```
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-prometheus/servicemonitor-example.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/servicemonitor-example.yaml
 ```
 
 5. 开发相关端口及权限  

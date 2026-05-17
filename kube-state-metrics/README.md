@@ -16,11 +16,11 @@ kubectl create ns prom
 ```
 2. 创建 Deployment 配置文件
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-state-metrics/kube-state-metrics-deploy.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-state-metrics/kube-state-metrics-deploy.yaml
 ```
 3. 创建 Service 配置文件
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-state-metrics/kube-state-metrics-svc.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-state-metrics/kube-state-metrics-svc.yaml
 ```
 kube-state-metrics Service 是否包含 annotations：
 ```
@@ -31,7 +31,7 @@ annotations:
 `如果 Prometheus 的 scrape_configs 使用了 kubernetes_sd_config 并配置了相应的 relabel 规则（例如过滤 __meta_kubernetes_service_annotation_prometheus_io_scrape = "true"），它就会自动发现该 Service 并开始抓取 /metrics。`  
 4. 创建 RBAC 配置文件
 ```
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/kube-state-metrics/kube-state-metrics-rbac.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-state-metrics/kube-state-metrics-rbac.yaml
 ```
 
 ## 3. 验证  

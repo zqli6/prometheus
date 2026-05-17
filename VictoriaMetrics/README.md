@@ -14,7 +14,7 @@
 ### 2.1 部署 VM Operator
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/install-no-webhook-lzq-0.68.3.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/install-no-webhook-lzq-0.68.3.yaml
 ```
 
 ### 2.2 创建 VM 实例（存储层）
@@ -24,13 +24,13 @@ kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/Vi
 **场景 A：单机版（极简高效）**
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/vm-single.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/vm-single.yaml
 ```
 
 **场景 B：集群版（高可用，推荐生产使用）**
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/vm-cluster.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/vm-cluster.yaml
 ```
 
 **验证**
@@ -46,7 +46,7 @@ kubectl get pod -n vm
 将 Prometheus 的 remoteWrite 指向 VM：
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/prometheus-prometheus-vm.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/prometheus-prometheus-vm.yaml
 ```
 
 核心修改内容：
@@ -150,7 +150,7 @@ kill %1
 添加统一的业务标签，并通过 `writeRelabelConfigs` drop `prometheus_replica` 标签。
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/prometheus-prometheus-vm-dedup.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/prometheus-prometheus-vm-dedup.yaml
 ```
 
 核心修改内容：
@@ -200,7 +200,7 @@ kubectl get prometheus k8s -n monitoring -o jsonpath='{.spec.scrapeInterval}'
 **方式一：apply YAML 文件**
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/vm-cluster-dedup.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/vm-cluster-dedup.yaml
 ```
 
 核心修改内容（在 `spec.vmselect` 下新增 `extraArgs`）：
@@ -324,7 +324,7 @@ kill %1
 由于采用 drop 标签方案，存储层数据已去重，Grafana 数据源**无需配置** `customQueryParameters`，直接指向 vmselect 即可，kube-prometheus 自带 dashboard 无需任何改动。
 
 ```bash
-kubectl apply -f https://gitee.com/zqli6/k8s/raw/main/install_yaml/prometheus/VictoriaMetrics/grafana-dashboardDatasources-vm.yaml
+kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/grafana-dashboardDatasources-vm.yaml
 ```
 
 数据源配置完整内容：
