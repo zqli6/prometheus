@@ -40,7 +40,7 @@ kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/kube-state-metrics/
 [root@master1 k8s-prom]# kubectl get pod,svc -n prom
 # NAME                                         READY   STATUS    RESTARTS       AGE
 # pod/kube-state-metrics-8bfc6ff57-qhg2k       1/1     Running   0              4m14s
-# pod/prometheus-server-554b65958d-5xmhm       1/1     Running   4 (4h5m ago)   12d
+# pod/prometheus-server-554b65958d-5xmhm       1/1     Running   4 (4h5m ago)   12d        # Prometheus的应用与此处部署无关
 # NAME                                 TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
 # service/kube-state-metrics           ClusterIP  10.104.193.129   <none>        8080/TCP        4m14s
 ```
