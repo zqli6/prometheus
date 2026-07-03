@@ -14,7 +14,13 @@
 ### 2.1 部署 VM Operator
 
 ```bash
+# x86
 kubectl apply -f https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/install-no-webhook-lzq-0.68.3.yaml
+```
+```
+curl -sL  https://gitee.com/zqli6/prometheus/raw/main/VictoriaMetrics/install-no-webhook-lzq-0.68.3.yaml \
+| sed 's|v0.68.3|v0.68.3-arm|g' \
+| kubectl apply -f -
 ```
 
 ### 2.2 创建 VM 实例（存储层）
