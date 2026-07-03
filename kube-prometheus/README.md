@@ -14,7 +14,7 @@ wget https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus
 ```
 ```
 # arm
-wget https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus-0.17.0-arm-lzq.tar.gz
+wget https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus-0.17.0-lzq-arm.tar.gz
 ```
   2.官方下载  
 ```
