@@ -9,7 +9,12 @@
 1.下载  
   1.swr镜像加速0.17.0  
 ```
+# x86
 wget https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus-0.17.0-lzq.tar.gz
+```
+```
+# arm
+wget https://gitee.com/zqli6/prometheus/raw/main/kube-prometheus/kube-prometheus-0.17.0-arm-lzq.tar.gz
 ```
   2.官方下载  
 ```
