@@ -1,0 +1,63 @@
+# CRD 统一由 scripts/02-install-crds.sh 以 Server-Side Apply 安装(大 CRD 普通 apply 会超 annotation 限制),
+# 同时禁用 crds 子 Chart,否则 Helm 3.0.x(无 --skip-crds 旗标)会以普通方式重复安装 CRD 造成冲突
+crds:
+  enabled: false
+
+grafana:
+  service:
+    type: NodePort
+    nodePort: 31169
+  defaultDashboardsEnabled: true
+  defaultDashboardsTimezone: browser
+  sidecar:
+    dashboards:
+      enabled: true
+      searchNamespace: ALL
+    datasources:
+      enabled: true
+  persistence:
+    enabled: true
+    type: pvc
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+    finalizers:
+      - kubernetes.io/pvc-protection
+
+prometheus:
+  service:
+    type: NodePort
+    nodePort: 31212
+  prometheusSpec:
+    retention: 10d
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 50Gi
+
+alertmanager:
+  # 三星环境仅做资源监控，覆盖 Chart 默认值以关闭 Alertmanager。
+  # 其他环境删除本行或改为 true，即可复用下面保留的存储配置。
+  enabled: false
+  alertmanagerSpec:
+    storage:
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 10Gi
+
+# 开启 recording rules，补全 Cluster / Namespace / Pod 等资源汇总 Dashboard 指标。
+# 此开关独立于 Alertmanager；即使 Alertmanager 关闭，Prometheus 仍会计算规则。
+defaultRules:
+  create: true
+
+global:
+  rbac:
+    create: true
