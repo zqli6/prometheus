@@ -1189,7 +1189,7 @@ imageRenderer:
     # image-renderer Image sha (optional)
     sha: ""
     # image-renderer ImagePullPolicy
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
   # extra environment variables
   env:
     HTTP_HOST: "0.0.0.0"

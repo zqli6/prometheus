@@ -58,6 +58,12 @@ alertmanager:
 defaultRules:
   create: true
 
+prometheusOperator:
+  admissionWebhooks:
+    patch:
+      image:
+        pullPolicy: IfNotPresent
+
 global:
   rbac:
     create: true
