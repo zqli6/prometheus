@@ -97,13 +97,13 @@ livenessProbe:
 image:
   # -- The Docker registry
   #registry: docker.io
-  registry: swr.cn-southwest-2.myhuaweicloud.com
+  registry: swr.cn-north-4.myhuaweicloud.com
   # -- Docker image repository
   #repository: grafana/grafana
-  repository: zqli/docker.io/grafana/grafana
+  repository: ddn-k8s/docker.io/grafana/grafana
   # Overrides the Grafana image tag whose default is the chart appVersion
   #tag: ""
-  tag: "11.2.0"
+  tag: "main"
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -122,8 +122,8 @@ testFramework:
     #registry: docker.io
     #repository: bats/bats
     #tag: "v1.4.1"
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/docker.io/bats/bats
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/docker.io/bats/bats
     tag: "v1.4.1"
   imagePullPolicy: IfNotPresent
   securityContext: {}
@@ -189,8 +189,8 @@ downloadDashboardsImage:
   #registry: docker.io
   #repository: curlimages/curl
   #tag: 7.85.0
-  registry: swr.cn-southwest-2.myhuaweicloud.com
-  repository: zqli/docker.io/curlimages/curl
+  registry: swr.cn-north-4.myhuaweicloud.com
+  repository: ddn-k8s/docker.io/curlimages/curl
   tag: 8.9.1
   sha: ""
   pullPolicy: IfNotPresent
@@ -425,9 +425,9 @@ initChownData:
     #registry: docker.io
     #repository: library/busybox
     #tag: "1.36.1"
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/docker.io/library/busybox
-    tag: "1.36.0"
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/docker.io/library/busybox
+    tag: "1.36.1"
     sha: ""
     pullPolicy: IfNotPresent
 
@@ -874,8 +874,8 @@ sidecar:
     #registry: quay.io
     #repository: kiwigrid/k8s-sidecar
     registry: 
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/quay.io/kiwigrid/k8s-sidecar
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/quay.io/kiwigrid/k8s-sidecar
     tag: 1.27.4
     sha: ""
   imagePullPolicy: IfNotPresent

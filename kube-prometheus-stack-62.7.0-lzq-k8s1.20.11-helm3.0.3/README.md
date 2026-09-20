@@ -5,6 +5,7 @@
 - Helm 扫描大型镜像归档后被 OOM Killer 终止。
 - 外层包装 Chart 导致 Helm Release Secret 超过 1 MiB。
 - 大型 CRD 使用客户端 Apply 时 annotation 超过 256 KiB。
+- **使用SWR lzq仓库镜像**
 
 ## 目录
 

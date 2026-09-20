@@ -659,8 +659,8 @@ alertmanager:
       #registry: quay.io
       #repository: prometheus/alertmanager
       #tag: v0.27.0
-      registry: swr.cn-southwest-2.myhuaweicloud.com
-      repository: zqli/quay.io/prometheus/alertmanager
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: ddn-k8s/quay.io/prometheus/alertmanager
       tag: v0.27.0
       sha: ""
 
@@ -2393,8 +2393,8 @@ prometheusOperator:
         #registry: quay.io
         #repository: prometheus-operator/admission-webhook
         #tag: ""
-        registry: swr.cn-southwest-2.myhuaweicloud.com
-        repository: zqli/quay.io/prometheus-operator/admission-webhook
+        registry: swr.cn-north-4.myhuaweicloud.com
+        repository: ddn-k8s/quay.io/prometheus-operator/admission-webhook
         # if not set appVersion field from Chart.yaml is used
         tag: "v0.83.0"
         sha: ""
@@ -2508,8 +2508,8 @@ prometheusOperator:
         #registry: registry.k8s.io
         #repository: ingress-nginx/kube-webhook-certgen
         #tag: v20221220-controller-v1.5.1-58-g787ea74b6
-        registry: swr.cn-southwest-2.myhuaweicloud.com
-        repository: zqli/registry.k8s.io/ingress-nginx/kube-webhook-certgen
+        registry: swr.cn-north-4.myhuaweicloud.com
+        repository: ddn-k8s/registry.k8s.io/ingress-nginx/kube-webhook-certgen
         tag: v20221220-controller-v1.5.1-58-g787ea74b6
         sha: ""
         pullPolicy: IfNotPresent
@@ -2872,10 +2872,10 @@ prometheusOperator:
     #repository: prometheus-operator/prometheus-operator
     ## if not set appVersion field from Chart.yaml is used
     #tag: ""
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/quay.io/prometheus-operator/prometheus-operator
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/quay.io/prometheus-operator/prometheus-operator
     # if not set appVersion field from Chart.yaml is used
-    tag: "v0.76.1"
+    tag: "v0.76.2"
     sha: ""
     pullPolicy: IfNotPresent
 
@@ -2903,10 +2903,10 @@ prometheusOperator:
       #repository: prometheus-operator/prometheus-config-reloader
       ## if not set appVersion field from Chart.yaml is used
       #tag: ""
-      registry: swr.cn-southwest-2.myhuaweicloud.com
-      repository: zqli/quay.io/prometheus-operator/prometheus-config-reloader
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: ddn-k8s/quay.io/prometheus-operator/prometheus-config-reloader
       # if not set appVersion field from Chart.yaml is used
-      tag: "v0.76.1"
+      tag: "v0.76.2"
       sha: ""
 
     # add prometheus config reloader liveness and readiness probe. Default: false
@@ -2927,8 +2927,8 @@ prometheusOperator:
     #registry: quay.io
     #repository: thanos/thanos
     #tag: v0.36.1
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/quay.io/thanos/thanos
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/quay.io/thanos/thanos
     tag: v0.39.1
     sha: ""
 
@@ -3520,8 +3520,8 @@ prometheus:
       #registry: quay.io
       #repository: prometheus/prometheus
       #tag: v2.54.1
-      registry: swr.cn-southwest-2.myhuaweicloud.com
-      repository: zqli/quay.io/prometheus/prometheus
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: ddn-k8s/quay.io/prometheus/prometheus
       tag: v2.54.1
       sha: ""
 
@@ -4515,8 +4515,8 @@ thanosRuler:
       #registry: quay.io
       #repository: thanos/thanos
       #tag: v0.36.1
-      registry: swr.cn-southwest-2.myhuaweicloud.com
-      repository: zqli/quay.io/thanos/thanos
+      registry: swr.cn-north-4.myhuaweicloud.com
+      repository: ddn-k8s/quay.io/thanos/thanos
       tag: v0.39.1
       sha: ""
 

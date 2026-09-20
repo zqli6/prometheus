@@ -6,10 +6,10 @@ image:
   #repository: prometheus/node-exporter
   ## Overrides the image tag whose default is {{ printf "v%s" .Chart.AppVersion }}
   #tag: ""
-  registry: swr.cn-southwest-2.myhuaweicloud.com
-  repository: zqli/quay.io/prometheus/node-exporter
+  registry: swr.cn-north-4.myhuaweicloud.com
+  repository: ddn-k8s/quay.io/prometheus/node-exporter
   # Overrides the image tag whose default is {{ printf "v%s" .Chart.AppVersion }}
-  tag: "v1.8.2"
+  tag: "v1.9.1"
   pullPolicy: IfNotPresent
   digest: ""
 
@@ -50,8 +50,8 @@ kubeRBACProxy:
     #registry: quay.io
     #repository: brancz/kube-rbac-proxy
     #tag: v0.18.0
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/quay.io/brancz/kube-rbac-proxy
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/quay.io/brancz/kube-rbac-proxy
     tag: v0.18.0
     sha: ""
     pullPolicy: IfNotPresent

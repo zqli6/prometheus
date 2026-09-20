@@ -5,10 +5,10 @@ image:
   #repository: kube-state-metrics/kube-state-metrics
   ## If unset use v + .Charts.appVersion
   #tag: ""
-  registry: swr.cn-southwest-2.myhuaweicloud.com
-  repository: zqli/registry.k8s.io/kube-state-metrics/kube-state-metrics
+  registry: swr.cn-north-4.myhuaweicloud.com
+  repository: ddn-k8s/registry.k8s.io/kube-state-metrics/kube-state-metrics
   # If unset use v + .Charts.appVersion
-  tag: "v2.13.0"
+  tag: "v2.9.2"
   sha: ""
   pullPolicy: IfNotPresent
 
@@ -111,8 +111,8 @@ kubeRBACProxy:
     #registry: quay.io
     #repository: brancz/kube-rbac-proxy
     #tag: v0.18.0
-    registry: swr.cn-southwest-2.myhuaweicloud.com
-    repository: zqli/quay.io/brancz/kube-rbac-proxy
+    registry: swr.cn-north-4.myhuaweicloud.com
+    repository: ddn-k8s/quay.io/brancz/kube-rbac-proxy
     tag: v0.18.0
     sha: ""
     pullPolicy: IfNotPresent
